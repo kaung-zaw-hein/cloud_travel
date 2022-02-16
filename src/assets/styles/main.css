@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Mulish&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+ body {
+    background: #E5E5E5;
+}
+    h1{
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 40px;
+        color: #000000;
+    }
+  h2{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+  }
+  h3{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #000000;
+  }
+  h4{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height, or 114% */
+    color: #000000;
+  }
+  p{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    color: #000000;
+  }
+  small{
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+    color: #000000;
+  }
+  .blue_1{
+    background: #002D63;
+  }
+  .blue_2{
+    background: #00A1E6;
+  }
+  .light_grey{
+    background: #F5F5F5;
+  }
+  .white{
+    background: #FFFFFF;
+  }
+  .black{
+    background: #000000;
+  }
+  .charcol{
+    background: #333333;
+  }
+  .placeholder{
+    background: #757575;
+  }
+  .line{
+    background: #DDDDDD;
+  }
+  .danger{
+    background: #D80000;
+  }
+  .warning{
+    background: #EE8F13;
+  }
+  .success{
+    background: #019501;
+  }
+  .danger_bg{
+    background: #FFE8E8;
+  }
+  .warning_bg{
+    background: #FFFBE8;
+  }
+  .success_bg{
+    background: #ECFBEC;
+  }
+  .star{
+    background: #E9BF2D;
+  }
