@@ -1,0 +1,252 @@
+.side_bar_container{
+    width:290px;
+    margin-right:16px;
+  }
+  .location_img{
+    width:290px;
+    height:100px;
+    background: url('../map-bg.jpeg'), #FFFFFF;
+    border-radius: 5px;
+    display:flex;
+    align-items:center;
+    background-size: 290px 100px;
+  }
+  .location_img button{
+    margin: 0 auto;
+    width:170px;
+    height:40px;
+    }
+    .location_img button h4{
+      color: #ffff;
+    }
+    .price_per_night{
+      width:250px;
+      height:102px;
+      padding:20px;
+      margin:7px 0;
+      border-radius: 5px;
+    }
+    .price_per_night div,
+    .reviews div,
+    .ratings div,
+    .reservation div,
+    .meal_plan div,
+    .property div{
+      display:flex;
+      justify-content:space-between;
+    }
+    .price_per_night div button,
+    .reviews div button,
+    .ratings div button{
+      width: 40px;
+      height: 20px;
+      font-family: Mulish;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 20px;
+      display: flex;
+      align-items: flex-end;
+      text-align: right;
+      text-transform: uppercase;
+      color: #002D63;
+      border:none;
+      background-color:transparent;
+      cursor: pointer;
+    }
+    .price_per_night input{
+       pointer-events: none;
+      position: absolute;
+       pointer-events: none;
+      -webkit-appearance: none;
+      overflow: hidden;
+      width:250px;
+      height:7px;
+      background: #DDDDDD;
+      border-radius: 3px;
+      margin: 29px 0 19px 0;
+    }
+    .price_per_night input[type=range]::-webkit-slider-thumb {
+      pointer-events: all;
+      position: relative;
+      z-index: 1;
+      outline: 0;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 3px;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00A1E5), color-stop(100%, #413F41));
+      /* android <= 2.2 */
+      background-image: -webkit-linear-gradient(top, #00A1E5 0, #413F41 100%);
+      /* older mobile safari and android > 2.2 */
+      background-image: linear-gradient(to bottom, #00A1E5 0, #413F41 100%);
+      /* W3C */
+    }
+    .price_per_night input[type=range]::-moz-range-thumb {
+      pointer-events: all;
+      position: relative;
+      z-index: 10;
+      -moz-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: none;
+      border-radius: 14px;
+      background-image: linear-gradient(to bottom, #00A1E5 0, #413F41 100%);
+      /* W3C */
+    }
+    .price_per_night input[type=range]::-ms-thumb {
+      pointer-events: all;
+      position: relative;
+      z-index: 10;
+      -ms-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 14px;
+      border: 0;
+      background-image: linear-gradient(to bottom, #dad8da 0, #413F41 100%);
+      /* W3C */
+    }
+    .price_per_night input[type=range]::-moz-range-track {
+      position: relative;
+      z-index: -1;
+      background-color: black;
+      border: 0;
+    }
+    .price_per_night input[type=range]:last-of-type::-moz-range-track {
+      -moz-appearance: none;
+      background: none transparent;
+      border: 0;
+    }
+    .price_per_night input[type=range]::-moz-focus-outer {
+      border: 0;
+    }
+    .price_per_night .rangedata_container{
+      margin-top: 55px;
+    }
+    .price_per_night .rangedata_container .rangedata{
+      width:110px;
+      height:30px;
+      border: 1px solid #DDDDDD;
+      box-sizing: border-box;
+      border-radius: 3px;
+      padding: 5px 10px;
+    }
+    .price_per_night .rangedata_container i{
+      margin: auto 0;
+      font-size: 18px;
+    }
+    .reviews,
+    .ratings,
+    .hotel_name,
+    .reservation,
+    .meal_plan,
+    .property{
+      width:250px;
+      border-radius: 5px;
+      padding: 21px 20px;
+      margin-bottom:10px;
+    }
+    .checkbox_container{
+      margin: 7px 0;
+    }
+    .checkbox_container div{
+      margin-top: 10px;
+    }
+    .checkbox_container div{
+      position: relative;
+    }
+    .checkbox_container input{
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    .checkbox_container label{
+       position: absolute;
+       left:20px;
+       font-family: Mulish;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: #333333;
+        width:200px;
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: -20px;
+      height: 15px;
+      width: 15px;
+      border: 1px solid #757575;
+      box-sizing: border-box;
+      border-radius: 1px;
+      transition:0.5s;
+    }
+    /* When the checkbox is checked, add a blue background */
+    .checkbox_container input:checked ~ .checkmark {
+      background-color: #002D63;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .checkbox_container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .checkbox_container .checkmark:after {
+      left: 3px;
+      top: -2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+    .checkbox_container i{
+        font-size: 15px;
+        color:#E9BF2D;
+        margin: 0 1px;
+    }
+    .hotel_name input{
+      width:230px;
+      height:40px;
+      padding:10px;
+      background: #FFFFFF;
+      /* line */
+
+      border: 1px solid #DDDDDD;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+    .hotel_name div{
+      width:230px;
+      margin-top:8px;
+      position: relative;
+    }
+    .hotel_name i{
+      position: absolute;
+      color:#757575;
+      right:10px;
+      top:12px;
+      cursor:pointer;
+    }
+    .meal_plan  p,
+    .property p{
+      padding-top: 7px;
+    }
+    .meal_plan p i,
+    .property p i{
+      margin-left:5px;
+    }
