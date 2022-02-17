@@ -187,7 +187,7 @@
           </div>
         </section>
          <p @click.prevent="fvalue = fvalue === 3 ? 26: 3 ">
-           {{fvalue === 3 ? "Show 5 more" : "show less"}}
+           {{fvalue === 3 ? "Show 26 more" : "show less"}}
            <i class="fa-solid vector" :class="{'fa-caret-down' : fvalue === 3 , 'fa-caret-up' : fvalue === 26 }">
             </i>
          </p>

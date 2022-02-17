@@ -74,7 +74,7 @@
     background: #000000;
   }
   .charcol{
-    background: #333333;
+    background: #333;
   }
   .placeholder{
     background: #757575;
@@ -89,7 +89,7 @@
     background: #EE8F13;
   }
   .success{
-    background: #019501;
+    color: #019501;
   }
   .danger_bg{
     background: #FFE8E8;
