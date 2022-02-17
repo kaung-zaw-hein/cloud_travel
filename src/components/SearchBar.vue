@@ -1,5 +1,5 @@
 <template>
-  <div class="search_bar_container blue_1">
+  <div  class="search_bar_container blue_1">
     <div class="search_bar">
       <input type="text" placeholder="&#xF002; Singapore, Singapore" style="font-family:Arial, FontAwesome" />
       <div class="datetime white">
@@ -27,8 +27,19 @@
 </template>
 
 <script>
+import {ref} from 'vue'
 export default {
-
+  setup(){
+    const searchh_bar = ref();
+    const handleScroll = () => {
+      const searchnav = document.querySelectorAll(".search_bar_container");
+      console.log(searchnav)
+      // const {innerHeight} = window;
+      // const bottomOfWindow = Math.round(scrollTop) + innerHeight === offsetHeight;
+    }
+    handleScroll();
+    return{handleScroll,searchh_bar}
+  }
 }
 </script>
 

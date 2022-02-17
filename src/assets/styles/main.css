@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Mulish&display=swap');
+html{
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #002D63; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00A1E6; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00A1E6;
+}
 *{
     margin:0;
     padding:0;
@@ -103,4 +122,5 @@
   .star{
     background: #E9BF2D;
   }
-@import './sidebar.css'
+@import './sidebar.css';
+@import './hotelresults.css'

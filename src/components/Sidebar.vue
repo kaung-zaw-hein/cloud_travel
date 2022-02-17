@@ -20,7 +20,7 @@
           </div>
           <i class="fa-solid fa-minus"></i>
         <div class="rangedata white">
-            <small>SGD{{slide1 > slide2 ? slide1 : slide2}} </small>
+            <small>SGD {{slide1 > slide2 ? slide1 : slide2}} </small>
           </div>
         </div>
     </div>

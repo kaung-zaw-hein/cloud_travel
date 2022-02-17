@@ -1,15 +1,18 @@
 <template>
   <MainNav></MainNav>
   <MainBody></MainBody>
+  <Footer></Footer>
 </template>
 
 <script>
 
+import Footer from './components/Footer'
 import MainBody from './components/MainBody'
 import MainNav from './components/MainNav'
 export default {
   name: 'App',
   components: {
+    Footer,
     MainBody,
     MainNav,
   }
