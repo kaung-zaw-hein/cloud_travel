@@ -1,6 +1,15 @@
 <template>
   <div class="side_bar_container">
-
+    <div class="title">
+      <h4>sort by</h4>
+      <div class="white">
+        <select>
+          <option value="item"
+          v-for="item in sort" :key="item">{{item}}</option>
+        </select>
+      </div>
+      <h4>Filter by</h4>
+    </div>
     <div class="location_img">
       <button class="blue_1"><h4>Show on map </h4></button>
     </div>
@@ -206,6 +215,7 @@ export default {
     const meal_plan = ref(["Room only", "Breakfast", "Lunch","Dinner", "Half board", "Full board", "All inclusive"]);
     const property = ref(["Hotel","Hostel/Backpacker","accomodation","Apartment","Aparthotel","Resort","Inn","Motel","Bed & breakfast","Guesthouse","Condo","All-inclusive property","Hostal"]);
     const facilities = ref(["Swimming pool","Internet access","Non-smoking floor"])
+    const sort = ref(["Popularity","Price (lowest first)","Reviews","Discount"]);
     const clear = () => {
       slide1.value = 0;
       slide2.value = 550;
@@ -215,7 +225,7 @@ export default {
     const pvalue = ref(0.25);
     const fvalue = ref(3);
 
-    return{ slide1, slide2,clear, meal_plan,reservation,reviews,property,mvalue,pvalue,facilities,fvalue}
+    return{ slide1, slide2,clear,sort, meal_plan,reservation,reviews,property,mvalue,pvalue,facilities,fvalue}
   }
 }
 </script>

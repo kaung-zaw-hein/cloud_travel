@@ -7,7 +7,7 @@
                   <p>Showing Results 1 – 20 of 9999</p>
                   <div>
                       <i class="fa-solid fa-angle-left"></i>
-                        <p class="ptag" @click="active">1</p>
+                        <p class="ptag pactive" @click="active">1</p>
                         <p class="ptag" @click="active">2</p>
                         <p class="ptag" @click="active">3</p>
                         <p class="ptag" @click="active">4</p>
@@ -126,5 +126,39 @@ export default {
      color:#fff;
      cursor: pointer;
  }
-
+@media (max-width:420px){
+ .footer{
+     overflow: hidden;
+     margin-top:40px;
+ }
+ .paginate{
+     padding:20px;
+ }
+ .paginate .pag{
+     width:100%;
+     flex-wrap: wrap;
+ }
+ .paginate div a{
+     width:90px;
+ }
+ .paginate div .pages{
+     height:20px;
+     flex-direction:column;
+     justify-content:flex-end;
+     color: #333;
+ }
+  .paginate div .pages p{
+      margin-left:150px;
+  }
+ .paginate div .pages div{
+     align-items:center;
+     justify-content:center;
+     padding: 0 10px;
+ }
+ .footernav{
+     display:flex;
+     justify-content:center;
+     padding:15px;
+ }  
+}
 </style>

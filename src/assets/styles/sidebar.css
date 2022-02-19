@@ -250,3 +250,42 @@
     .property p i{
       margin-left:5px;
     }
+    .side_bar_container .title{
+      display:none;
+    }
+    @media (max-width:420px){
+      .side_bar_container{
+        width:414px;
+        display:none;
+      }
+      .location_img{
+        display:none;
+      }
+      .price_per_night,
+      .reviews,
+      .ratings,
+      .hotel_name,
+      .reservation,
+      .meal_plan,
+      .property{
+        width:374px;
+        padding:20px;
+      }
+      .side_bar_container .title{
+        display:block;
+        padding:0;
+      }
+      .side_bar_container .title h4{
+        color: #002D63;
+        padding:12px 20px;
+      }
+      .side_bar_container .title div{
+        padding:12px 0;
+      }
+      .side_bar_container select{
+        outline:none;
+        width:414px;
+        border:none;
+        overflow:hidden;
+      }
+    }

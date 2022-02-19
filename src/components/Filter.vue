@@ -78,5 +78,10 @@ export default {
   .filter:nth-child(2):hover div{
     display: flex;
   }
+  @media (max-width:420px){
+    .filter_container{
+      display: none;
+    }
+  }
   
 </style>

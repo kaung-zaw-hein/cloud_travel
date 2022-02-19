@@ -1,7 +1,16 @@
 <template>
-  <div  class="search_bar_container blue_1">
+  <div v-if="data"  class="search_bar_container blue_1"
+  :class="{'topnav': istopnav}">
     <div class="search_bar">
-      <input type="text" placeholder="&#xF002; Singapore, Singapore" style="font-family:Arial, FontAwesome" />
+      <div class="inputdiv">
+        <input v-model="search_w" type="text" placeholder="&#xF002; search  Singapore and press enter" style="font-family:Arial, FontAwesome" />
+        <div :class="{'svalue': search_w !==null}" class="white" v-for="item in searchh_r" :key="item" 
+        @click.prevent="search_w = item.label"
+        ><p>{{item.label}}</p></div>
+        <i class="fa-solid fa-xmark white"
+        :class="{'svalue': search_w !==null}"
+        @click.prevent="search_w = null"></i>
+      </div>
       <div class="datetime white">
         <i class="fa-solid fa-calendar"></i>
         <p> Jul 19 - Jul 20 </p>
@@ -27,18 +36,65 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+import {ref,computed} from 'vue'
 export default {
   setup(){
     const searchh_bar = ref();
+    const istopnav = ref(false);
     const handleScroll = () => {
-      const searchnav = document.querySelectorAll(".search_bar_container");
-      console.log(searchnav)
-      // const {innerHeight} = window;
-      // const bottomOfWindow = Math.round(scrollTop) + innerHeight === offsetHeight;
+      if(document.documentElement.scrollTop > 100 ){
+        istopnav.value = true;
+      }
+      else{
+        istopnav.value = false;
+      }
     }
+    window.addEventListener('scroll',handleScroll)
+    
+    const data = ref();
+    const fetch = async() => {
+
+         var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+        function doCORSRequest(options, printResult) {
+          var x = new XMLHttpRequest();
+          x.open(options.method, cors_api_url + options.url);
+          x.onload = x.onerror = function() {
+            printResult(
+              (x.responseText || '')
+            );
+          };
+          if (/^POST/i.test(options.method)) {
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+          }
+          x.send(options.data);
+        }
+
+        // Bind event
+            doCORSRequest({
+              method: 'GET',
+              url: "https://hiring.zumata.xyz/job01/autosuggest",
+              data: ""
+            }, function printResult(result) {
+              data.value = result;
+              data.value = JSON.parse(data.value)
+            });
+
+    
+    }
+    fetch();
+
+    const search_w = ref(null);
+    const searchh_r = computed(() => {
+      return data.value.filter((item) => {
+        // if (search_w.value !== null){
+        //   search_w.value = search_w.value.toLowerCase();
+        // }
+        return item.label.toLowerCase().includes(search_w.value === null ? search_w.value : search_w.value.toLowerCase() );
+      })
+    })
+
     handleScroll();
-    return{handleScroll,searchh_bar}
+    return{handleScroll,searchh_bar,istopnav,data,search_w,searchh_r}
   }
 }
 </script>
@@ -58,7 +114,10 @@ export default {
    display:flex;
    flex-direction:flex-start;
  }
- .search_bar input{
+ .search_bar .inputdiv{
+   position:relative;
+ }
+ .search_bar .inputdiv input{
    width:470px;
    height:50px;
    outline:none;
@@ -69,7 +128,15 @@ export default {
    margin-left:10px;
    padding: 0 10px 0 19px;
  }
- .search_bar div{
+ .search_bar .inputdiv i{
+   width:20px;
+   height:20px;
+   text-align: center;
+   align-items:center;
+   border-radius:5px;
+   display:none;
+ }
+ .search_bar div:nth-child(n+2){
    width:250px;
    height:50px;
   border: 1px solid #DDDDDD;
@@ -81,6 +148,22 @@ export default {
   text-align:center;
   align-items:center;
   position: relative;
+ }
+  .search_bar .inputdiv div{
+    display: none;
+   width:470px;
+   height:50px;
+   padding: 0 10px 0 19px;
+   border: none;
+  text-align:left;
+  align-items: center;
+ }
+  .svalue{
+   display:flex !important;
+ }
+ .svalue:hover{
+   background:#6d8baf;
+   cursor: pointer;
  }
  .search_bar button{
    width:150px;
@@ -141,4 +224,10 @@ export default {
      }
 
    }  
+   .topnav{
+     width: 100%;
+     position: fixed;
+     top:0;
+    z-index: 1000;
+   }
 </style>
