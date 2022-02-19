@@ -3,7 +3,10 @@
   :class="{'topnav': istopnav}">
     <div class="search_bar">
       <div class="inputdiv">
-        <input v-model="search_w" type="text" placeholder="&#xF002; search  Singapore and press enter" style="font-family:Arial, FontAwesome" />
+        <input v-model="search_w" type="text" 
+        placeholder="&#xF002; search  Singapore select and press enter" 
+        style="font-family:Arial, FontAwesome"  
+        @keypress.enter.prevent="handleSubmit" />
         <div :class="{'svalue': search_w !==null}" class="white" v-for="item in searchh_r" :key="item" 
         @click.prevent="search_w = item.label"
         ><p>{{item.label}}</p></div>
@@ -37,8 +40,10 @@
 
 <script>
 import {ref,computed} from 'vue'
+import { useStore } from 'vuex'
 export default {
   setup(){
+    const store = useStore();
     const searchh_bar = ref();
     const istopnav = ref(false);
     const handleScroll = () => {
@@ -86,15 +91,29 @@ export default {
     const search_w = ref(null);
     const searchh_r = computed(() => {
       return data.value.filter((item) => {
-        // if (search_w.value !== null){
-        //   search_w.value = search_w.value.toLowerCase();
-        // }
         return item.label.toLowerCase().includes(search_w.value === null ? search_w.value : search_w.value.toLowerCase() );
       })
     })
 
+    const handleSubmit = () => {
+      data.value.forEach((item) => {
+          if( item.label.toLowerCase().includes( event.target.value.toLowerCase())){
+            if(item.cityCode !=="mlph"){
+              store.dispatch("fetches",item.cityCode);
+              store.state.error = false;
+              event.target.value = null;
+            }
+            else{
+              event.target.value = null;
+              store.state.error = true;
+              store.state.searchdata ="";
+            }
+          }
+      })
+    }
+
     handleScroll();
-    return{handleScroll,searchh_bar,istopnav,data,search_w,searchh_r}
+    return{handleScroll,searchh_bar,istopnav,data,search_w,searchh_r,handleSubmit,store}
   }
 }
 </script>
