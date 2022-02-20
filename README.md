@@ -1,4 +1,6 @@
 # cloud_travel
+![image](https://user-images.githubusercontent.com/62888962/154828666-50959395-bf5e-4146-a609-88093754f516.png)
+![image](https://user-images.githubusercontent.com/62888962/154828689-2bf1dbf4-2b00-4a2b-91ee-d7d84177b942.png)
 
 ## Project setup
 ```
@@ -14,6 +16,11 @@ npm run serve
 ```
 npm run build
 ```
+### To solve cross origin issue, i used cross anywhere package if api doesnt work in your browser
+go to this site and click to get  access(cause it is not free)
+
+See [cross anywhere](https://cors-anywhere.herokuapp.com/corsdemo).
+
 
 ### Run your unit tests
 ```
