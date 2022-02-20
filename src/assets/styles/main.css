@@ -63,6 +63,7 @@ html{
     font-family: Mulish;
     font-style: normal;
     font-weight: normal;
+    white-space:nowrap;
     font-size: 14px;
     line-height: 20px;
     /* identical to box height, or 143% */
@@ -122,5 +123,26 @@ html{
   .star{
     background: #E9BF2D;
   }
+  .rect145{
+    display: none;
+  }
+   @media (max-width:420px) {
+     .dnone{
+       display: none !important;
+     }
+     .rect145{
+       width:100%;
+       display: flex;
+       justify-content: flex-start;
+       padding:18px 0;
+       align-items:center;
+       border: 1px solid #DDDDDD;
+       color:#002D63;
+     }
+     .rect145 i{
+        font-size:14px;
+        margin:0  20px;
+     }
+   }
 @import './sidebar.css';
 @import './hotelresults.css'

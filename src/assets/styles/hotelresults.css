@@ -1,11 +1,11 @@
 .results_container{
-    width:904px;
+    width:100%;
      display: flex;
     justify-content:flex-start;
     flex-wrap: wrap;
   }
   .results_container .result{
-    width: 884px;
+    width:100%;
     height: 210px;
     padding: 10px;
     border-radius: 5px;
@@ -13,13 +13,13 @@
     display: flex;
   }
   .results_container .result .image_container{
-    width:200px;
+    width:23%;
     height:100%;
     display: flex;
     flex-wrap: wrap;
   }
   .results_container .result .image_container img{
-    width:50px;
+    width:25%;
     height:48px;
     cursor: pointer;
     transition: all 0.7s;
@@ -29,12 +29,12 @@
     transform: scale(2);
   }
   .results_container .result .image_container .img1{
-    width:200px;
+    width:100%;
     height:160px;
   }
   .results_container .result .result_content{
     padding:16px;
-    width: 400px;
+    width: 44%;
   }
   .results_container .result .result_content h4 i{
     font-size: 10px;
@@ -49,7 +49,7 @@
     display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 400px;
+    width: 100%;
   }
   .result .result_content .tags{
     margin:7px 0;
@@ -121,13 +121,14 @@
     display: flex;
     flex-direction:column;
     justify-content:space-between;
+    align-items: flex-end;
+    width:33%;
     height: 210px;
     margin-left:0px;
     padding:7px 0;
   }
   .result .priceandrating img{
     width: 146px;
-    margin-left: 100px;
     height: 50.5px;
   }
   .result .priceandrating .price{
@@ -197,7 +198,7 @@
       display:none;
     }
     .priceandrating{
-      width:100%;
+      width: 100% !important;;
       height:70px !important;
       float:right;
     }

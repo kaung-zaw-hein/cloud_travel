@@ -1,7 +1,11 @@
 <template>
-  <div class="side_bar_container">
+  <div class="side_bar_container" :class="{'dside':store.state.sidebar}">
+    <div class="white rect145">
+      <i @click.prevent="store.state.sidebar = !store.state.sidebar" class="fa-solid fa-xmark"></i>
+      <h3>Sort & Filter</h3>
+    </div>
     <div class="title">
-      <h4>sort by</h4>
+      <h4>Sort by</h4>
       <div class="white">
         <select>
           <option value="item"
@@ -206,8 +210,10 @@
 
 <script>
 import { ref } from 'vue'
+import {useStore} from 'vuex'
 export default {
   setup(){
+    const store = useStore();
     const slide1 = ref(0);
     const slide2 = ref(550);
     const reviews = ref(["Excellent","Very Good","Good","Fair","Poor","No review"])
@@ -225,7 +231,7 @@ export default {
     const pvalue = ref(0.25);
     const fvalue = ref(3);
 
-    return{ slide1, slide2,clear,sort, meal_plan,reservation,reviews,property,mvalue,pvalue,facilities,fvalue}
+    return{store, slide1, slide2,clear,sort, meal_plan,reservation,reviews,property,mvalue,pvalue,facilities,fvalue}
   }
 }
 </script>

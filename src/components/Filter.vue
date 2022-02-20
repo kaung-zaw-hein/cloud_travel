@@ -36,14 +36,14 @@ export default {
 
 <style scoped>
   .filter_container{
-    width:904px;
+    width:100%;
     height:44px;
     margin-bottom:15px;
     display: flex;
     justify-content:flex-start;
   }
   .filter{
-    width:226px;
+    width:25%;
     height:44px;
     border-left:1px solid #ddd;
     border-radius: 5px 0px 0px 5px;

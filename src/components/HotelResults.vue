@@ -64,7 +64,7 @@
         <i class="fa-solid fa-magnifying-glass"></i>
         <h3>Sorry! We couldn't find any properties for your search.</h3>
       </div>
-       <div class="no_result" v-if="error">
+       <div class="no_result" v-if="error && data.length<1">
        <i class="fa-solid fa-circle-exclamation"></i>
         <h3>Opps, something went wrong.</h3>
         <small>error message here</small>

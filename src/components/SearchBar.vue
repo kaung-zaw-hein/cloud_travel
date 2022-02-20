@@ -1,7 +1,12 @@
 <template>
-  <div v-if="data"  class="search_bar_container blue_1"
+  <div  v-if="data"  class="search_bar_container blue_1"
   :class="{'topnav': istopnav}">
-    <div class="search_bar">
+   <div class="white rect145" :class="{'dnone':!store.state.searchbar}">
+      <i @click.prevent="store.state.searchbar = !store.state.searchbar" class="fa-solid fa-xmark"></i>
+      <h3>Where?</h3>
+    </div>
+    <div class="search_bar" 
+    :class="{'dnone':!store.state.searchbar}">
       <div class="inputdiv">
         <input v-model="search_w" type="text" 
         placeholder="&#xF002; search  Singapore select and press enter" 
@@ -24,7 +29,9 @@
       </div>
       <button class="submit blue_2"><p>Search</p></button>
     </div>
-    <div class="mobo_search_bar white">
+    <div class="mobo_search_bar white" 
+    @click.prevent="store.state.searchbar = !store.state.searchbar"
+    :class="{'dnone':store.state.searchbar}">
       <i class="fa-solid fa-magnifying-glass"></i>
       <div>
         <h4>Singapore, Singapore</h4>
@@ -126,18 +133,23 @@ export default {
 
   background: #002D63;
   border-radius: 3px;
-  padding:10px 145px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
  }
  .search_bar{
+   width:80%;
    height:100%;
    display:flex;
-   flex-direction:flex-start;
+   justify-content:space-between;
  }
  .search_bar .inputdiv{
    position:relative;
+   width:40%;
  }
  .search_bar .inputdiv input{
-   width:470px;
+   width:100%;
    height:50px;
    outline:none;
    border:none;
@@ -156,7 +168,7 @@ export default {
    display:none;
  }
  .search_bar div:nth-child(n+2){
-   width:250px;
+   width:21%;
    height:50px;
   border: 1px solid #DDDDDD;
   box-sizing: border-box;
@@ -166,6 +178,7 @@ export default {
   color: #333;
   text-align:center;
   align-items:center;
+  overflow: hidden;
   position: relative;
  }
   .search_bar .inputdiv div{
@@ -185,7 +198,7 @@ export default {
    cursor: pointer;
  }
  .search_bar button{
-   width:150px;
+   width:13%;
    height:50px;
    border-radius: 3px;
    margin-left:10px;
@@ -220,11 +233,12 @@ export default {
   }
    @media (max-width:420px) {
      .search_bar_container{
+       flex-direction: column;
        padding:0;
+       background:#fff!important;
+       height: auto;
      }
-     .search_bar{
-     display: none;
-     }
+    
      .mobo_search_bar{
        width:100%;
        display: flex;
@@ -241,7 +255,20 @@ export default {
      .dateandguest{
        display: flex;
      }
-
+    .search_bar{
+      width:90% !important;
+      height:100vh;
+      flex-direction:column;
+      justify-content: flex-start;
+      padding:20px;
+    }
+    .search_bar div{
+      width:100% !important;
+      margin-bottom:20px;
+    }
+    .search_bar button{
+      width:50%;
+    }
    }  
    .topnav{
      width: 100%;

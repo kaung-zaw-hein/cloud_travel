@@ -4,6 +4,8 @@ export default createStore({
     searchdata: [],
     loading: false,
     error: false,
+    sidebar:false,
+    searchbar:false,
   },
   mutations: {
     setdata(state,payload){

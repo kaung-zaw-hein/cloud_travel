@@ -1,5 +1,5 @@
 <template>
-    <div id="nav" class="navbar_container">
+    <div id="nav" class="navbar_container" :class="{'dnone':store.state.searchbar}">
         <div class="navbar white">
         <div class="logo_img"></div>
         <div class="navbar_content">
@@ -16,8 +16,12 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
 export default {
-
+    setup(){
+        const store = useStore();
+        return {store};
+    }
 }
 </script>
 
@@ -27,32 +31,23 @@ export default {
         position: relative;
     }
     .navbar {
-        position: absolute;
-        left: 0%;
-        right: 0%;
-        top: 0%;
-        bottom: 0%;
+        display: flex;
+        height:60px;
+        align-items:center;
+        justify-content:space-around;
         /* white */
         background: #FFFFFF;
         /* line */
         border: 1px solid #DDDDDD;
     }
     .logo_img{
-        position: absolute;
         width: 227.5px;
         height: 35px;
-        left: 147px;
-        top: 13px;
         background: url('../assets/logo.jpg');
         background-repeat: no-repeat;
         background-size:227.5px 35px;
     }
     .navbar_content {
-        position: absolute;
-        left: 68.12%;
-        right: 9.31%;
-        top: 35.18%;
-        bottom: 32%;
 
         font-family: Mulish;
         font-style: normal;

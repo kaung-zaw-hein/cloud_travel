@@ -1,11 +1,10 @@
 <template>
-  <div class="footer">
+  <div :class='{"dnone":store.state.sidebar || store.state.searchbar, }' class="footer">
       <div class="paginate">
           <div class="pag">
               <a href="#nav">Back to top</a>
-              <div class="pages">
-                  <p>Showing Results 1 – 20 of 9999</p>
-                  <div>
+                  <p class="pages">Showing Results 1 – 20 of 9999</p>
+               <div class="num">
                       <i class="fa-solid fa-angle-left"></i>
                         <p class="ptag pactive" @click="active">1</p>
                         <p class="ptag" @click="active">2</p>
@@ -17,7 +16,6 @@
                         <p class="ptag" @click="active">13</p>
                         <i class="fa-solid fa-angle-right"></i>
                   </div>
-              </div>
           </div>
       </div>
       <div class="footernav charcol">
@@ -36,8 +34,10 @@
 </template>
 
 <script>
+import {useStore} from 'vuex';
 export default {
     setup(){
+        const store = useStore();
         const active = () => {
             document.querySelectorAll('.ptag').forEach((item) =>{
             item.classList.remove('pactive')
@@ -45,7 +45,7 @@ export default {
             event.target.classList.add("pactive");
         }
 
-    return{  active};
+    return{store,  active};
     }
 }
 </script>
@@ -59,46 +59,48 @@ export default {
      display:flex;
      justify-content:center;
      align-items:center;
-     padding:40px 0 40px 80px;
+     padding:40px 0 ;
  }
  .paginate .pag{
-     width:850px;
+     width:66%;
      display:flex;
      justify-content:space-between;
+     flex-wrap:wrap;
  }
  .paginate div a{
-     width:100px;
+     width:11%;
      text-decoration:none;
      color: #002D63;
      cursor: pointer;
      margin-left:30px;
  }
  .paginate div .pages{
-     width:585px;
+     width:45%;
      height:20px;
      display:flex;
      justify-content:flex-end;
      color: #333;
+     flex-wrap:wrap;
  }
- .paginate div .pages div{
+ .num{
      display: flex;
      align-items:center;
-     justify-content:flex-end;
+     justify-content:center;
      padding: 0 10px;
  }
- .paginate div .pages div i{
+ .num i{
      color: #002D63;
     opacity: 0.6;
     margin: 0 10px;
  }
  
- .paginate div .pages div p{
-     width:20px;
+ .num p{
      text-align:center;
       margin: 0 5px;
       cursor:pointer;
  }
  .pactive{
+     width:20px;
     background: #002D63;
     border-radius: 5px;
     color:#fff;
