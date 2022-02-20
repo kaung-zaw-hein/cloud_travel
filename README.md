@@ -1,5 +1,7 @@
 # cloud_travel
 ![image](https://user-images.githubusercontent.com/62888962/154828666-50959395-bf5e-4146-a609-88093754f516.png)
+![image](https://user-images.githubusercontent.com/62888962/154828845-5913af94-83a7-486a-8d2f-9e52a00d9814.png)
+
 ![image](https://user-images.githubusercontent.com/62888962/154828689-2bf1dbf4-2b00-4a2b-91ee-d7d84177b942.png)
 
 ## Project setup
